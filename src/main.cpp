@@ -6,10 +6,7 @@
 #include "GL/glu.h"
 #include "GL/freeglut.h"
 
-#include "../include/gameUtils/include/score.hpp"
-#include "../include/gameUtils/include/utils.hpp"
-#include "../include/gameUtils/include/windowProfile.hpp"
-#include "../include/gameUtils/include/racket.hpp"
+#include "../include/gameUtils/include/GameUtils.hpp"
 
 const int PLAYER2_RACKET_WIDTH = 10;
 
