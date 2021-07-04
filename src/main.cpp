@@ -109,11 +109,11 @@ void keyboard(unsigned char Key, int x, int y)
             racket_player1.set_racket_y(racket_player1.get_racket_y() - 
                                         racket_player1.get_racket_speed());
             break;
-        case 'i': // up key
+        case 'i':
             racket_player2.set_racket_y(racket_player2.get_racket_y() + 
                                         racket_player2.get_racket_speed());
             break;
-        case 'k': // down key
+        case 'k':
             racket_player2.set_racket_y(racket_player2.get_racket_y() - 
                                         racket_player2.get_racket_speed());
             break;
