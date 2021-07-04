@@ -4,6 +4,7 @@ add_library(gameUtils
     score.cpp
     utils.cpp
     racket.cpp
+    ball.cpp
 )
 
 find_package(OpenGL REQUIRED)

@@ -15,6 +15,7 @@ GameUtils::Score score = GameUtils::Score();
 GameUtils::Racket racket_player1(10.0f, 50.0f);
 GameUtils::Racket racket_player2(
     (float)window_profile.WIDTH - PLAYER2_RACKET_WIDTH - 10, 50.0f);
+GameUtils::Ball ball(window_profile.WIDTH/2, window_profile.HEIGHT/2);
 
 /**
  * @brief Draws components onto display
@@ -87,6 +88,8 @@ void draw()
     racket_player1.drawRect();
     // racket for p2
     racket_player2.drawRect();
+    // ball
+    ball.draw();
     
     // draw score
     drawText(window_profile.WIDTH / 2 - 10, window_profile.HEIGHT - 15,
@@ -126,6 +129,9 @@ void update(int value)
 {
     // Input handling
     glutKeyboardFunc(keyboard);
+
+    // ball
+    ball.updateBall();
 
     // Call update() again in interval milliseconds
     glutTimerFunc(window_profile.INTERVAL, update, 0);
