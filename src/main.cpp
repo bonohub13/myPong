@@ -131,7 +131,7 @@ void update(int value)
     glutKeyboardFunc(keyboard);
 
     // ball
-    ball.updateBall();
+    ball.updateBall(racket_player1, racket_player2, window_profile, score);
 
     // Call update() again in interval milliseconds
     glutTimerFunc(window_profile.INTERVAL, update, 0);
