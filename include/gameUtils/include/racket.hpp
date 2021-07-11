@@ -1,6 +1,9 @@
 #ifndef __GAMEUTILS_RACKET_HPP__
 #define __GAMEUTILS_RACKET_HPP__
 
+#include <vector>
+#include <array>
+
 namespace GameUtils
 {
 
@@ -42,6 +45,7 @@ namespace GameUtils
          * 
          */
         void drawRect();
+        
         /* setters */
 
         void set_racket_x(float racket_x);
@@ -51,6 +55,8 @@ namespace GameUtils
         /* getters */
         
         int get_racket_speed();
+        int get_racket_width();
+        int get_racket_height();
         float get_racket_x();
         float get_racket_y();
     };

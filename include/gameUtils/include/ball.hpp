@@ -1,6 +1,10 @@
 #ifndef __GAMEUTILS_BALL_HPP__
 #define __GAMEUTILS_BALL_HPP__
 
+#include "racket.hpp"
+#include "windowProfile.hpp"
+#include "score.hpp"
+
 namespace GameUtils
 {
 
@@ -21,7 +25,7 @@ namespace GameUtils
         int ball_radius;
         // speed (velocity)
         int ball_speed;
-    public:
+    public: // functions
         /**
          * @brief Draws Ball onto screen
          * 
@@ -29,9 +33,20 @@ namespace GameUtils
         void draw();
         /**
          * @brief update position of ball
+         * @param racket1 racket for player 1
+         * @param racket2 racket for player 2
          * 
          */
-        void updateBall();
+        void updateBall(Racket &racket1, Racket &racket2,
+                        WindowProfile &window_profile, Score &score);
+    private: // functions
+        /**
+         * @brief keeps the value of direction to 1
+         * 
+         * @param x 
+         * @param y 
+         */
+        void vec2_norm(float &x, float &y);
     };
 
 }

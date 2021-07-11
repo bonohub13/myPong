@@ -51,6 +51,16 @@ int GameUtils::Racket::get_racket_speed()
     return racket_speed;
 }
 
+int GameUtils::Racket::get_racket_width()
+{
+    return racket_width;
+}
+
+int GameUtils::Racket::get_racket_height()
+{
+    return racket_height;
+}
+
 float GameUtils::Racket::get_racket_x()
 {
     return racket_x;
