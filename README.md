@@ -42,6 +42,14 @@ cmake .. && make
 
 - - -
 
+## ::::: PLANS :::::
+1. Add rotation to paddles
+2. Add horizontal movement to paddles
+3. Add maps
+    - ex) Curved walls???
+
+- - -
+
 ## ::::: UPDATES ::::
 - Jul 4, 2021
     - Initialized repository
