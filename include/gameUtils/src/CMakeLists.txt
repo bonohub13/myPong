@@ -1,3 +1,5 @@
+set(OpenGL_GL_PREFERENCE GLVND)
+
 add_library(gameUtils
   SHARED
     windowProfile.cpp
