@@ -8,13 +8,15 @@
 
 #include "../include/gameUtils/include/GameUtils.hpp"
 
-const int PLAYER2_RACKET_WIDTH = 10;
+const int RACKET_WIDTH = 10;
+const int RACKET_HEIGHT = 80;
 
 GameUtils::WindowProfile window_profile;
 GameUtils::Score score = GameUtils::Score();
-GameUtils::Racket racket_player1(10.0f, 50.0f);
+GameUtils::Racket racket_player1(10.0f + RACKET_WIDTH / 2,
+                                 50.0f + RACKET_HEIGHT / 2 );
 GameUtils::Racket racket_player2(
-    (float)window_profile.WIDTH - PLAYER2_RACKET_WIDTH - 10, 50.0f);
+    (float)window_profile.WIDTH - RACKET_WIDTH / 2 - 10, 50.0f + RACKET_HEIGHT / 2);
 GameUtils::Ball ball(window_profile.WIDTH/2, window_profile.HEIGHT/2);
 
 /**
@@ -105,20 +107,28 @@ void keyboard(unsigned char Key, int x, int y)
     switch(Key)
     {
         case 'w':
-            racket_player1.set_racket_y(racket_player1.get_racket_y() + 
-                                        racket_player1.get_racket_speed());
+            racket_player1.move_racket(GameUtils::Racket::MoveMode::UP);
             break;
         case 's':
-            racket_player1.set_racket_y(racket_player1.get_racket_y() - 
-                                        racket_player1.get_racket_speed());
+            racket_player1.move_racket(GameUtils::Racket::MoveMode::DOWN);
+            break;
+        case 'e':
+            racket_player1.rotate_racket(GameUtils::Racket::RotateMode::CLOCKWISE);
+            break;
+        case 'q':
+            racket_player1.rotate_racket(GameUtils::Racket::RotateMode::COUNTER_CLOCKWISE);
             break;
         case 'i':
-            racket_player2.set_racket_y(racket_player2.get_racket_y() + 
-                                        racket_player2.get_racket_speed());
+            racket_player2.move_racket(GameUtils::Racket::MoveMode::UP);
             break;
         case 'k':
-            racket_player2.set_racket_y(racket_player2.get_racket_y() - 
-                                        racket_player2.get_racket_speed());
+            racket_player2.move_racket(GameUtils::Racket::MoveMode::DOWN);
+            break;
+        case 'o':
+            racket_player2.rotate_racket(GameUtils::Racket::RotateMode::CLOCKWISE);
+            break;
+        case 'u':
+            racket_player2.rotate_racket(GameUtils::Racket::RotateMode::COUNTER_CLOCKWISE);
             break;
         default:
             std::cout << "Keypress: " << Key << std::endl;

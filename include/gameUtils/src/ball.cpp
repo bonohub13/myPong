@@ -43,27 +43,27 @@ void GameUtils::Ball::updateBall(Racket &racket1, Racket &racket2,
     // 0 -> did not hit any racket
     // 1 -> hit racket1
     // 2 -> hit racket2
-    ball_hit_racket = (ball_pos_x - 15.0f < (float)(racket1.get_racket_x() + racket1.get_racket_width())
-                       && racket1.get_racket_x() < ball_pos_x + 15.0f
-                       && ball_pos_y + 15.0f > racket1.get_racket_y()
-                       && (float)(racket1.get_racket_y() + racket1.get_racket_height()) > ball_pos_y - 15.0f) ? 1
-                    : (ball_pos_x + 15.0f > (float)(racket2.get_racket_x() + racket2.get_racket_width())
-                       && racket2.get_racket_x() > ball_pos_x - 15.0f
-                       && ball_pos_y + 15.0f > racket2.get_racket_y()
-                       && (float)(racket2.get_racket_y() + racket2.get_racket_height()) > ball_pos_y) ? 2
+    ball_hit_racket = (ball_pos_x - 15.0f < racket1.get_points_x()[1]
+                       && racket1.get_points_x()[0] < ball_pos_x + 15.0f
+                       && ball_pos_y + 15.0f > racket1.get_points_y()[3]
+                       && racket1.get_points_y()[0] > ball_pos_y - 15.0f) ? 1
+                    : (ball_pos_x + 15.0f > racket2.get_points_x()[1]
+                       && racket2.get_points_x()[0] > ball_pos_x - 15.0f
+                       && ball_pos_y + 15.0f > racket2.get_points_y()[3]
+                       && racket2.get_points_y()[0] > ball_pos_y) ? 2
                     : 0;
 
     // check for hit detection with racket
     switch (ball_hit_racket)
     {
         case 1:
-            angle = ((ball_pos_y - racket1.get_racket_y()) / racket1.get_racket_height()) - 0.5f;
+            angle = ((ball_pos_y - racket1.get_points_y()[3]) / racket1.get_racket_height()) - 0.5f;
             ball_dir_x = fabs(ball_dir_x); // force it to be negative
             ball_dir_y = angle;
             break;
 
         case 2:
-            angle = ((ball_pos_y - racket2.get_racket_y()) / racket2.get_racket_height()) - 0.5f;
+            angle = ((ball_pos_y - racket2.get_points_y()[3]) / racket2.get_racket_height()) - 0.5f;
             ball_dir_x = -fabs(ball_dir_x); // force it to be negative
             ball_dir_y = angle;
             break;
