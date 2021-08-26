@@ -30,9 +30,11 @@ cmake .. && make
 - - -
 
 ## ::::: GOALS :::::
-1. Learn the basis of C++
+> - If done ~~GOAL~~
+1. ~~Learn the basis of C++~~
 2. Learn how to make packages that are precompilable
-3. Make this accessible via the AUR
+    - cmake files not figured out to make the package easily available to other projects
+3. Make this accessible via the AUR (Arch User Repository)
 4. Add features that are not on the source website
     - ex) rotating paddles
 5. Make use of OpenGL and other cross platform APIs as much as possible
@@ -44,7 +46,10 @@ cmake .. && make
 
 ## ::::: PLANS :::::
 1. Add rotation to paddles
+    - Visualization of rotating paddle &rarr; COMPLETED!
+    - Hit detection based on rotation of paddle &rarr; Not yet...
 2. Add horizontal movement to paddles
+    - After hit detection has been figured out
 3. Add maps
     - ex) Curved walls???
 
